@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState([]);
@@ -37,7 +38,13 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 rounded-2xl">
           {blogs.map((blog) => (
             <Link key={blog._id} href={`/blog/${blog.slug}`} className="block border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-              <img src={blog.coverImage || "/placeholder.jpg"} alt={blog.title} className="w-full h-48 object-cover" />
+<Image 
+  src={blog.coverImage || "/placeholder.jpg"} 
+  alt={blog.title} 
+  width={500}  // Adjust as needed
+  height={300} // Adjust as needed
+  className="w-full h-48 object-cover"
+/>
               <div className="p-4 bg-sky-300">
                 <h2 className="text-xl font-semibold">{blog.title}</h2>
                 <p className="text-sm text-gray-600">{blog.content.slice(0, 100)}...</p>

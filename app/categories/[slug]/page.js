@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { Loader2, AlertTriangle } from "lucide-react";
+import Image from "next/image";
 
 const CategoryPage = () => {
     const router = useRouter();
@@ -61,11 +62,14 @@ const CategoryPage = () => {
                                        transition-all hover:shadow-xl hover:bg-sky-100 dark:hover:bg-gray-700"
                             onClick={() => router.push(`/blog/${blog.slug}`)}
                         >
-                            <img 
-                                src={blog.coverImage || "/placeholder.jpg"} 
-                                alt={blog.title} 
-                                className="w-full h-40 object-cover"
-                            />
+                          <Image
+  src={blog.coverImage || "/placeholder.jpg"} 
+  alt={blog.title} 
+  width={500}  // Adjust as needed
+  height={160} // Corresponding to h-40 in Tailwind (40 * 4 = 160px)
+  className="w-full h-40 object-cover"
+/>
+
                             <div className="p-5">
                                 <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
                                     {blog.title}

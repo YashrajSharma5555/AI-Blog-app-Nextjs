@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function NewPost() {
   const { data: session, status } = useSession();
@@ -104,7 +105,13 @@ export default function NewPost() {
             <ImageUpload onUpload={(url) => setImageUrl(url)} />
             {imageUrl && (
               <div className="mt-4 relative">
-                <img src={imageUrl} alt="Uploaded preview" className="w-48 h-48 object-cover rounded-lg shadow-md" />
+<Image 
+  src={imageUrl} 
+  alt="Uploaded preview" 
+  width={192}  // w-48 = 48 * 4 = 192px
+  height={192} // h-48 = 48 * 4 = 192px
+  className="w-48 h-48 object-cover rounded-lg shadow-md"
+/>
               </div>
             )}
           </div>

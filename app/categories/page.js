@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, AlertTriangle } from "lucide-react";
+import Image from "next/image";
 
 // Hardcoded category images
 const categoryImages = {
@@ -78,11 +79,14 @@ const CategoriesPage = () => {
                         onClick={() => router.push(`/categories/${category.slug}`)}
                     >
                         {/* Hardcoded Category Image */}
-                        <img 
-                            src={categoryImages[category.name] || "/others.jpg"} 
-                            alt={category.name} 
-                            className="w-full h-40 object-cover"
-                        />
+                        <Image
+  src={categoryImages[category.name] || "/others.jpg"} 
+  alt={category.name} 
+  width={500}  // Adjust as needed
+  height={160} // Corresponds to h-40 (40 * 4 = 160px in Tailwind)
+  className="w-full h-40 object-cover"
+/>
+
                         
                         {/* Category Info */}
                         <div className="p-5">

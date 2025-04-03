@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { Loader2, AlertTriangle } from "lucide-react";
+import Image from "next/image";
 
 const BlogPostPage = () => {
     const router = useRouter();
@@ -54,11 +55,14 @@ const BlogPostPage = () => {
             <p className="text-gray-600 mx-auto w-4xl dark:text-gray-400 text-sm">
                 By <span className="font-semibold">{post.author.name}</span> | Category: <span className="font-semibold">{post.category.name}</span>
             </p>
-            <img 
-                src={post.coverImage || "/placeholder.jpg"} 
-                alt={post.title} 
-                className="w-3xl h-64 mx-auto object-cover rounded-md my-6"
-            />
+            <Image 
+  src={post.coverImage || "/placeholder.jpg"} 
+  alt={post.title} 
+  width={1024}  // Adjust as needed
+  height={256}  // h-64 = 64 * 4 = 256px
+  className="w-full h-64 mx-auto object-cover rounded-md my-6"
+/>
+
 
             {/* ✅ Ensure text is properly formatted with indentation and line breaks */}
             <div className="prose prose-lg mx-auto w-4xl dark:prose-invert">

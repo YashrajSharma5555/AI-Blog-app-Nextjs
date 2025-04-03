@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, AlertTriangle, Trash2, Pencil } from "lucide-react";
@@ -72,8 +73,8 @@ const ProfilePage = () => {
             <h1 className="text-3xl font-bold text-center mb-6">My Blogs</h1>
             {blogs.length === 0 ? (
                 <p className="text-center text-gray-600 dark:text-gray-400">
-                    You haven't posted any blogs yet.
-                </p>
+    You haven&#39;t posted any blogs yet.
+</p>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {blogs.map((blog) => (
@@ -82,11 +83,14 @@ const ProfilePage = () => {
                             className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden cursor-pointer
                                        transition-all hover:shadow-xl hover:bg-sky-100 dark:hover:bg-gray-600"
                         >
-                            <img 
-                                src={blog.coverImage || "/placeholder.jpg"} 
-                                alt={blog.title} 
-                                className="w-full h-40 object-cover"
-                            />
+                           <Image 
+  src={blog.coverImage || "/placeholder.jpg"} 
+  alt={blog.title} 
+  width={500} 
+  height={300} 
+  className="w-full h-40 object-cover"
+/>
+
                             <div className="p-5">
                                 <h2 
                                     className="text-xl font-semibold text-gray-800 dark:text-white cursor-pointer"
