@@ -63,7 +63,7 @@ const ProfilePage = () => {
         return (
             <div className="flex flex-col items-center justify-center h-screen text-red-500 dark:text-red-400">
                 <AlertTriangle className="w-10 h-10 mb-2" />
-                <p className="text-lg">{"Please Login !"}</p>
+                <p className="text-lg">{error}</p>
             </div>
         );
     }

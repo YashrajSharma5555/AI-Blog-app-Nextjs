@@ -13,7 +13,7 @@ export async function GET(req) {
         // Get user session
         const session = await getServerSession(authOptions);
         if (!session) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+            return NextResponse.json({ error: "Please login !" }, { status: 401 });
         }
 
         // Get user ID from MongoDB
@@ -28,7 +28,7 @@ export async function GET(req) {
         return NextResponse.json(userBlogs, { status: 200 });
     } catch (error) {
         console.error("Error fetching blogs:", error);
-        return NextResponse.json({ error: "Error fetching user blogs" }, { status: 500 });
+        return NextResponse.json({ error: "Please upload blogs !" }, { status: 500 });
     }
 }
 

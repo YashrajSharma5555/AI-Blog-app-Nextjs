@@ -96,11 +96,16 @@ const Navbar = () => {
                 <ModeToggle />
 
                 {session ? (
-                    <div className="flex items-center gap-3">
-                        <Link href="/profile">
+                    <div className="flex items-center gap-3 p-2 rounded-lg bg-white dark:bg-gray-900 shadow-md">
+                        <Link href="/profile" className="flex items-center gap-2">
                             {session.user.image && (
-                                <img src={session.user.image} alt="Profile" className="w-8 h-8 rounded-full border" />
-                            )}
+                                <Image
+            src={session.user.image}
+            alt="Profile"
+            width={40}
+            height={40}
+            className="rounded-full border-2 border-gray-300 dark:border-gray-600 transition-all hover:scale-105"
+          />                            )}
                             <span className="hidden sm:block text-gray-800 dark:text-white">{session.user.name}</span>
                         </Link>
                         <Button variant="outline" className="dark:text-white text-black" onClick={() => signOut()}>
