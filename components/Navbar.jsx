@@ -97,7 +97,7 @@ const Navbar = () => {
                 <ModeToggle />
 
                 {session ? (
-                    <div className="flex items-center gap-3 p-2 rounded-lg bg-white dark:bg-gray-900 shadow-md">
+                    <div className="flex items-center gap-3 p-2 rounded-lg bg-sky-200 dark:bg-gray-900 shadow-md">
                         <Link href="/profile" className="flex items-center gap-2">
                             {session.user.image && (
                                 <Image

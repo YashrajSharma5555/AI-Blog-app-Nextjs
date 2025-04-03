@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ["images.unsplash.com","res.cloudinary.com"], // Allow external images from Unsplash
-    },
-  };
-  
-  export default nextConfig;
-  
+  images: {
+    domains: [
+      "images.unsplash.com",
+      "res.cloudinary.com",
+      "lh3.googleusercontent.com", // ✅ Add Google profile picture domain
+    ],
+  },
+};
+
+export default nextConfig;
