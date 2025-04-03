@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { ModeToggle } from "./theme-btn";
 import { useRouter } from "next/navigation";
 import { Menu, X, Home, PlusCircle, FileText, List, User } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
     const { data: session } = useSession();
