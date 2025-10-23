@@ -6,7 +6,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Button } from "./ui/button";
 import { ModeToggle } from "./theme-btn";
 import { useRouter } from "next/navigation";
-import { Menu, X, Home, PlusCircle, FileText, List, User } from "lucide-react";
+import { Menu, X, Home, PlusCircle, FileText, List, User, BrainCircuit } from "lucide-react";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -52,6 +52,11 @@ const Navbar = () => {
                         <User className="w-5 h-5" /> Profile
                     </Link>
                 </li>
+                <li>
+                    <Link href="/ai-assistant" className="flex items-center gap-1 cursor-pointer">
+                        <BrainCircuit className="w-5 h-5" /> AI Assistant
+                    </Link>
+                </li>
             </ul>
 
             {/* Mobile Menu Button */}
@@ -86,6 +91,11 @@ const Navbar = () => {
                         <li>
                             <Link href="/profile" onClick={toggleMenu} className="flex items-center gap-2">
                                 <User className="w-5 h-5" /> Profile
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/ai-assistant" onClick={toggleMenu} className="flex items-center gap-2">
+                                <BrainCircuit className="w-5 h-5" /> AI Assistant
                             </Link>
                         </li>
                     </ul>
